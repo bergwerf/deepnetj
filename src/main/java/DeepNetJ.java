@@ -28,9 +28,9 @@ public class DeepNetJ implements Command {
   private File kerasInput;
 
   @Parameter(label="2D patching method", choices={
-    "Crop edges", // Do not process half paches
-    "Clamp edges", // Fill half patches with clamped edges
-    "Mirror edges" // Fill half patches with mirrored content
+    "Crop edges", // Do not process half patches.
+    "Clamp edges", // Fill half patches with clamped edges.
+    "Mirror edges" // Fill half patches with mirrored content.
   })
   private String patchingMethod = "Mirror edges";
 
@@ -59,4 +59,11 @@ public class DeepNetJ implements Command {
       log.info(String.format("Prediction failed: %s", e.getMessage()));
     }
 	}
+
+  /// Launch ImageJ and run plugin. This can be used for debugging.
+  public static void main(final String... args) throws Exception {
+    final ImageJ ij = new ImageJ();
+    ij.launch(args);
+    ij.command().run(DeepNetJ.class, true);
+  }
 }
