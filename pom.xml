@@ -111,5 +111,12 @@
       <artifactId>deeplearning4j-zoo</artifactId>
       <version>${dl4j.version}</version>
     </dependency>
+
+    <!-- Keras importing ability -->
+    <dependency>
+      <groupId>org.deeplearning4j</groupId>
+      <artifactId>deeplearning4j-modelimport</artifactId>
+      <version>${dl4j.version}</version>
+    </dependency>
 	</dependencies>
 </project>
