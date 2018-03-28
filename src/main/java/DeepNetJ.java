@@ -47,14 +47,14 @@ public class DeepNetJ implements Command {
     try {
       // Import Keras model and weights into DL4J.
       String path = kerasInput.getAbsolutePath();
-      ComputationGraph graph = KerasModelImport.importKerasModelAndWeights(path);
+      ComputationGraph g = KerasModelImport.importKerasModelAndWeights(path);
 
       // Log some information about the model to the console.
-      INDArray in = graph.input();
+      INDArray in = g.input();
       log.info("Successfully imported Keras model.");
       log.info(String.format("Input shape: %s", Arrays.toString(in.shape())));
-      log.info(String.format("Batch size: %s", graph.batchSize()));
-      log.info(String.format("Model summary: %s", graph.summary()));
+      log.info(String.format("Batch size: %s", g.batchSize()));
+      log.info(String.format("Model summary: %s", g.summary()));
     } catch (Exception e) {
       log.info(String.format("Prediction failed: %s", e.getMessage()));
     }
