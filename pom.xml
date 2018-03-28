@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+		http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.hermanbergwerf</groupId>
+	<artifactId>deepnetj</artifactId>
+	<version>0.0.0</version>
+
+	<name>DeepNetJ</name>
+	<description>Deep learning for ImageJ</description>
+	<url>https://github.com/bergwerf/deepnetj</url>
+	<inceptionYear>2018</inceptionYear>
+	<licenses>
+		<license>
+			<name>The MIT License</name>
+			<url>https://opensource.org/licenses/MIT</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>bergwerf</id>
+			<name>Herman Bergwerf</name>
+			<url>https://hermanbergwerf.com</url>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:git://github.com/bergwerf/deepnetj</connection>
+		<developerConnection>scm:git:git@github.com:bergwerf/deepnetj</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/bergwerf/deepnetj</url>
+	</scm>
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>http://github.com/bergwerf/deepnetj/issues</url>
+	</issueManagement>
+	<ciManagement>
+		<system>None</system>
+	</ciManagement>
+
+	<properties>
+		<main-class>DeepNetJ</main-class>
+		<license.licenseName>MIT</license.licenseName>
+		<license.copyrightOwners>Herman Bergwerf</license.copyrightOwners>
+		<license.projectName>DeepNetJ</license.projectName>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    <dl4j.version>0.9.2-SNAPSHOT</dl4j.version>
+    <imagej.version>2.0.0-rc-65</imagej.version>
+	</properties>
+
+	<repositories>
+    <!-- ImageJ repository -->
+		<repository>
+			<id>imagej.public</id>
+			<url>http://maven.imagej.net/content/groups/public</url>
+		</repository>
+
+    <!-- DL4J repository -->
+    <repository>
+      <id>snapshots-repo</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <releases>
+          <enabled>false</enabled>
+      </releases>
+      <snapshots>
+          <enabled>true</enabled>
+          <updatePolicy>daily</updatePolicy> <!-- Get latest features -->
+      </snapshots>
+    </repository>
+	</repositories>
+
+	<dependencies>
+    <!-- ImageJ API -->
+		<dependency>
+			<groupId>net.imagej</groupId>
+			<artifactId>imagej</artifactId>
+      <version>${imagej.version}</version>
+		</dependency>
+
+		<!-- ND4J backend. You need one in every DL4J project. Normally define
+    artifactId as either "nd4j-native-platform" or "nd4j-cuda-7.5-platform" -->
+    <dependency>
+      <groupId>org.nd4j</groupId>
+      <artifactId>nd4j-native</artifactId>
+      <version>${dl4j.version}</version>
+    </dependency>
+
+    <!-- Core DL4J functionality -->
+    <dependency>
+      <groupId>org.deeplearning4j</groupId>
+      <artifactId>deeplearning4j-core</artifactId>
+      <version>${dl4j.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.deeplearning4j</groupId>
+      <artifactId>deeplearning4j-nlp</artifactId>
+      <version>${dl4j.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.deeplearning4j</groupId>
+      <artifactId>deeplearning4j-zoo</artifactId>
+      <version>${dl4j.version}</version>
+    </dependency>
+	</dependencies>
+</project>
