@@ -5,6 +5,13 @@
 		http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+  <!-- <parent>
+    <groupId>org.scijava</groupId>
+    <artifactId>pom-scijava</artifactId>
+    <version>16.1.0</version>
+    <relativePath />
+  </parent> -->
+
 	<groupId>com.hermanbergwerf</groupId>
 	<artifactId>deepnetj</artifactId>
 	<version>0.0.0</version>
@@ -21,6 +28,7 @@
 		</license>
 	</licenses>
 
+  <organization></organization>
 	<developers>
 		<developer>
 			<id>bergwerf</id>
@@ -28,6 +36,7 @@
 			<url>https://hermanbergwerf.com</url>
 		</developer>
 	</developers>
+  <contributors></contributors>
 
 	<scm>
 		<connection>scm:git:git://github.com/bergwerf/deepnetj</connection>
@@ -42,6 +51,7 @@
 	<ciManagement>
 		<system>None</system>
 	</ciManagement>
+  <mailingLists></mailingLists>
 
 	<properties>
 		<main-class>DeepNetJ</main-class>
@@ -125,7 +135,7 @@
 
   <build>
     <plugins>
-      <!-- -->
+      <!--
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <configuration>
@@ -147,7 +157,6 @@
           </execution>
         </executions>
       </plugin>
-      <!--
       <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>

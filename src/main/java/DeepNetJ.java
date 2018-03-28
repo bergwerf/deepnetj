@@ -20,7 +20,7 @@ import org.deeplearning4j.nn.modelimport.keras.KerasModelImport;
 
 @Plugin(type=Command.class, headless=true, menuPath="DeepNetJ>Predict")
 public class DeepNetJ implements Command {
-  // Assigned automatically by ImageJ.
+  /// Assigned automatically by ImageJ.
 	@Parameter
   private LogService log;
 
@@ -40,8 +40,8 @@ public class DeepNetJ implements Command {
   @Parameter(label="Patch output overlap")
   private String patchOverlapOut = "0, 0";*/
 
-  // This method is executed when the user pressed OK. This means model
-  // parameters are selected, and predicting can begin.
+  /// This method is executed when the user pressed OK. This means model
+  /// parameters are selected, and predicting can begin.
 	@Override
 	public void run() {
     try {
